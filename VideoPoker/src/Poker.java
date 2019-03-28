@@ -49,12 +49,13 @@ public class Poker {
 		//printa quantos creditos possue
 		p.getCreditos(true);
 		
-		System.out.printf("Deseja Continuar? S/N\n");
-		s = EntradaTeclado.leString();
-		
-		//compara de a resposta for nao
-		if(s.compareTo("N") == 0 || s.compareTo("n") == 0){
-			exit = true;
+		if(p.getCreditos() != 0){
+			System.out.printf("Deseja Continuar? S/N\n");
+			s = EntradaTeclado.leString();
+			
+			//compara de a resposta for nao
+			if(s.compareTo("N") == 0 || s.compareTo("n") == 0)
+				exit = true;
 		}
 	
 	}
