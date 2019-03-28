@@ -1,3 +1,10 @@
+/**Video Poker- Trabalho de POO
+
+ * Classe que chega numeros aleatorios
+ * @author Breno Pejon & Lucas Ebling
+ * N  USP  10801152    & 10692183
+ *
+ */
 import java.util.Calendar;
 
 public class Rand {
@@ -8,9 +15,11 @@ public class Rand {
 	
 	private long xi = Calendar.getInstance().getTimeInMillis();
 	
-	
-	public double getRand()
-	{
+	/**
+	 * 
+	 * @return retorna um double raleatorio
+	 */
+	public double getRand(){
 		xi = (a + (m * xi))%p;
 		double d = xi;
 	
@@ -18,8 +27,13 @@ public class Rand {
 		return d/p;
 	}
 	
-	public int getRange(int max, int min)
-	{
+	/**
+	 *  retorna um inteiro baseado em um alcance determinado
+	 * @param max range maximo
+	 * @param min range minimo
+	 * @return retorna um int aleatorio com range de max e min
+	 */
+	public int getRange(int max, int min){
 		int y = (int)(getRand() * max - min  +1) + min;
 		
 		
