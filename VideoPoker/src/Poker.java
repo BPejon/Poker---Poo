@@ -25,11 +25,9 @@ public class Poker {
 		
 		System.out.printf("   (0)      (1)      (2)      (3)      (4)   \n");
 		System.out.printf("Quais sao as cartas que deseja substituir, digite seu numero e de um espaco para a proxima.\n Caso nao queira mudar, apenas digite 'n' seguida de enter:\n"); 
-		//talvez há um erro de buffer aqui depois que o usuario digita a aposta e escolhe nao trocar de carta, talvez ele esteja pegando o \n ao inves de N
 		String s = EntradaTeclado.leString();
 		
-		//se nao for espaco pegara novas cartas
-		//as vezes ocorre um erro, suspeito de corrupcao no buffer
+		//se nao for n, pegara novas cartas
 		if(s.compareTo("n") != 0){
 			cart.partialDraw(s);
 			cart.displayHand();
@@ -45,7 +43,6 @@ public class Poker {
 				cart.displayHand();
 			}
 		}
-		
 		//verifica qual é a pontuacao
 		p.Pontuacao(cart.getMao(), cart.getNaipe());
 		

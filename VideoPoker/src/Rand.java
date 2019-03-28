@@ -1,5 +1,4 @@
 /**Video Poker- Trabalho de POO
-
  * Classe que chega numeros aleatorios
  * @author Breno Pejon & Lucas Ebling
  * N  USP  10801152    & 10692183
