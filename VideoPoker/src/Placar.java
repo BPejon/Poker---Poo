@@ -43,6 +43,10 @@ public class Placar {
 				this.aposta = aux;
 				this.creditos -= this.aposta;				//retira a aposta do credito
 			}
+			else if(aux == 0){
+				System.out.printf("Aposte algum credito\n");
+				getCreditos(true);
+			}
 			else
 				System.out.printf("Nao ha creditos suficientes\n");
 		}				
@@ -214,11 +218,13 @@ public class Placar {
 				}
 				
 				//verifica Straight
-				else if(vet_cont[i] == 1 && vet_cont[i+1] == 1 && vet_cont[i+2] == 1 && vet_cont[i+3] == 1 && vet_cont[i+4] == 1){		//verifica cartas em ordem
-					System.out.printf("Straight!!\n");
-					this.creditos += this.aposta * 5;
-					return;
-				}					
+				else if(i < 11){
+					if(vet_cont[i] == 1 && vet_cont[i+1] == 1 && vet_cont[i+2] == 1 && vet_cont[i+3] == 1 && vet_cont[i+4] == 1){		//verifica cartas em ordem
+						System.out.printf("Straight!!\n");
+						this.creditos += this.aposta * 5;
+						return;
+					}
+				}
 		}
 		
 		//Se nao alcançou nenhum dos casos
